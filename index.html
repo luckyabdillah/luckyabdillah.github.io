@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buff Me Up | Fitness Center</title>
+    <link rel="stylesheet" href="src/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="shortcut icon" href="src/fitness.svg" type="image/x-icon">
+</head>
+<style>
+
+    #navs li {
+        margin-left: 30px;
+    }
+
+    /* #navs li:hover{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    } */
+
+    .join{
+        background-color: black;
+        border-radius: 30px;
+        width: 120px;
+    }
+
+    /* .join:hover{
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+    } */
+
+    .title{
+        font-family: 'Poppins Semibold';
+        font-size: 3.5em;
+    }
+
+    .content{
+        font-family: 'Poppins Medium';
+        font-size: 1.35em;
+        width: 650px;
+    }
+
+    .direction{
+        font-family: 'Poppins Medium';
+        font-size: 1.04em;
+        border: 3px solid black;
+        width: 16%;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+    }
+
+    .direction:hover{
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+    }
+
+    #programs, #programs2, #programs3, #programs4{
+        gap: 2%;
+        margin-top: 2%;
+    }
+
+    #program1, #program2, #program3, #program4, #program5, #program6, #program7, #program8{
+        display: flex;
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-family: 'Poppins Semibold';
+        font-size: 1.8em;
+        cursor: pointer;
+    }
+
+    #program1{
+        background-image: url(src/stretching.jpg);
+    }
+
+    #program2{
+        background-image: url(src/zumba.jpg);
+    }
+
+    #program3{
+        background-image: url(src/yoga.jpg);
+    }
+
+    #program4{
+        background-image: url(src/bodypump.jpg);
+    }
+
+    #program5{
+        background-image: url(src/dance.jpg);
+    }
+
+    #program6{
+        background-image: url(src/weightlifting.jpg);
+    }
+
+    #program7{
+        background-image: url(src/boxing.jpg);
+    }
+
+    #program8{
+        background-image: url(src/heavy.jpg);
+    }
+
+    #title2{
+        font-family: 'Poppins Semibold';
+        color: white;
+        font-size: 3em;
+    }
+
+    #title3{
+        font-family: 'Poppins Light';
+        color: white;
+    }
+
+    .direction2{
+        font-family: 'Poppins';
+        font-size: 1.04em;
+        border: 3px solid white;
+        width: 31%;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+    }
+
+    .direction2:hover{
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+    }
+
+    #content2, #content3, #content4, #content5{
+        font-family: 'Poppins Semibold';
+        color: white;
+        font-size: 1.55em;
+        height: 250px;
+        border-radius: 15px;
+        /* background-image: linear-gradient( 126.3deg,  rgba(46, 13, 105, 0.89) 32.2%, rgba(100, 45, 86, 0.89) 119% ); */
+        background-color: #FF3CAC;
+        background-image: linear-gradient(225deg, #05395c 0%, #34388a 50%, #2e0353e3 100%);
+        /* background-color: #8BC6EC;
+        background-image: linear-gradient(90deg, #22475f 0%, #090c50 100%); */
+        
+    }
+
+    #footer1{
+        display: flex;
+        border: 2px solid white;
+        margin-left: 18px;
+        width: 190px;
+        height: 47px;
+        font-size: 0.675em;
+        font-family: 'Poppins';
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #footer2, #footer3, #footer4{
+        display: flex;
+        border: 2px solid white;
+        margin-left: 18px;
+        width: 170px;
+        height: 47px;
+        font-size: 0.675em;
+        font-family: 'Poppins';
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    #footer1:hover, #footer2:hover, #footer3:hover, #footer4:hover{
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+    }
+
+    #ceo{
+        background-image: linear-gradient( 76.3deg,  rgba(44,62,78,1) 12.6%, rgba(69,103,131,1) 82.8% );
+        color: white;
+    }
+
+    #footer{
+        font-family: 'Poppins';
+        height: 150px;
+    }
+
+    /* ::-webkit-scrollbar {
+        width: 15px;
+        background: #34388a;
+    } */
+
+    body::-webkit-scrollbar {
+        width: 14px;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: white;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        /* background-color: black; */
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,152,155,1) 0.1%, rgba(0,94,120,1) 94.2% );
+        border-radius: 20px;
+        /* border: 3px solid orange */
+    }
+
+    .footer-atas a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer-bawah a{
+        color: rgb(170, 170, 170);
+        text-decoration: none;
+    }
+
+    #footer-kanan a{
+        color: white;
+        text-decoration: none;
+    }
+
+    #footer-kanan a:hover{
+        color: rgb(121, 121, 121);
+    }
+
+    .card{
+        font-family: 'Poppins';
+        font-size: 1.1em;
+        color: white;
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgb(54, 53, 53) 0.1%, rgb(24, 24, 24) 94.2% );
+    }
+
+    .member li{
+        list-style-type: none;
+        margin-left: -10%;
+        padding-bottom: 10px;
+    }
+
+    .direction3{
+        border: 2px solid white;
+        width: 160px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins Medium';
+    }
+
+    .direction3:hover{
+        background-color: white;
+        color: black;
+        transition: 0.5s;
+    }
+
+</style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand ml-5" href="#" style="font-family: 'Poppins Semibold'; font-size: 1.6em;">buffmeup</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav">
+            </div>
+            <div class="form-inline my-2 my-lg-0" id="navs"style="font-family: 'Poppins Medium';">
+                <ul class="navbar-nav">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Programs</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Coaches</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Club</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <div class="join">
+                        <a class="nav-link" href="#" style="color: white; text-align: center;">Join Now ></a>
+                    </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav style="margin-top: 5%;">
+        <center>
+            <h1 class="title">Build your tomorrow</h1>
+            <p class="content mt-4">
+                Network of stretching and fitness studios. Choose a direction and sign up for a trial workout for free
+            </p>
+                <div class="direction mt-5">
+                    Get started now
+                </div>
+        </center>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row" id="programs">
+            <div class="col-md" id="program1">Stretching</div>
+            <div class="col-md" id="program2">Zumba</div>
+            <div class="col-md" id="program3">Yoga</div>
+            <div class="col-md" id="program4">Bodypump</div>
+        </div>
+        <div class="row" id="programs2">
+            <div class="col-md" id="program5">Dance Workout</div>
+            <div class="col-md" id="program6">Weightlifting</div>
+            <div class="col-md" id="program7">Boxing</div>
+            <div class="col-md" id="program8">Heavy Workout</div>
+        </div>
+    </div>
+
+    <div class="jumbotron" style="background-color: black; margin-top: 7%;">
+        <div class="container">
+            <h2 id="title2">For the first time?</h2>
+            <h3 id="title3" class="mt-3">Sign up for trial workout!</h3>
+            <div class="direction2 mt-4">
+                First Lesson, IDR 259.000 &nbsp;<s style="color: gray;">IDR 599.000</s>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="margin-top: 6%;">
+        <h1 style="text-align: center; font-family: 'Poppins Semibold';">Be with us online</h1>
+        <div class="row mt-5" id="programs3">
+            <div class="col-md-4" id="content2">
+                <div class="card-header mt-4">
+                    Online Sprints
+                </div>
+                <div class="card-body" style="font-family: 'Poppins'; font-size: 0.85em;">
+                    Start every 2 weeks
+                </div>
+                <div class="card-footer" id="footer1">
+                    Participate
+                </div>
+            </div>
+            <div class="col-md" id="content3">
+                <div class="card-header mt-4">
+                    Live Classes
+                </div>
+                <div class="card-body" style="font-family: 'Poppins'; font-size: 0.85em; line-height: 27px;">
+                    Train with our trainers from anywhere in the world
+                </div>
+                <div class="card-footer" id="footer2">
+                    Study
+                </div>
+            </div>
+        </div>
+        <div class="row" id="programs4">
+            <div class="col-md-8" id="content4">
+                <div class="card-header mt-4">
+                    Individual Training
+                </div>
+                <div class="card-body" style="font-family: 'Poppins'; font-size: 0.85em; line-height: 27px;">
+                    Train with your favorite trainer via<br>zoom or skype
+                </div>
+                <div class="card-footer" id="footer3">
+                    Order
+                </div>
+            </div>
+            <div class="col-md" id="content5">
+                <div class="card-header mt-4">
+                    Online Courses
+                </div>
+                <div class="card-body" style="font-family: 'Poppins'; font-size: 0.85em; line-height: 27px;">
+                    Stretching, Yoga, Boxing and more
+                </div>
+                <div class="card-footer" id="footer4">
+                    Want!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1 style="text-align: center; font-family: 'Poppins Semibold'; margin-top: 6%;">Become a member</h1>
+        <div class="row mt-5">
+            <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                <center>
+                <h5 class="card-title" style="font-size: 1.35em;">IDR 299.000</h5>
+                </center>
+                <div class="member mt-4">
+                    <ul>
+                        <li><i class="fa fa-check"></i> 1 Month Free Access</li>
+                        <li><i class="fa fa-times"></i> &nbsp;Online Training</li>
+                        <li><i class="fa fa-times"></i> &nbsp;Certified</li>
+                        <li><i class="fa fa-times"></i> &nbsp;Trainer</li>
+                    </ul>
+                </div>
+                <center>
+                    <a href="#" id="direct3" style="color: white; text-decoration: none;">
+                        <div class="direction3 mt-4 mb-4">Join</div>
+                    </a>
+                </center>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm">
+            <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title" style="font-size: 1.35em;">IDR 599.000</h5>
+                    </center>
+                <div class="member mt-4">
+                    <ul>
+                        <li><i class="fa fa-check"></i> 3 Month Free Access</li>
+                        <li><i class="fa fa-check"></i> Online Training</li>
+                        <li><i class="fa fa-times"></i> &nbsp;Certified</li>
+                        <li><i class="fa fa-times"></i> &nbsp;Trainer</li>
+                    </ul>
+                </div>
+                <center>
+                    <a href="#" id="direct3" style="color: white; text-decoration: none;">
+                        <div class="direction3 mt-4 mb-4">Join</div>
+                    </a>
+                </center>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                <div class="card-body">
+                    <center>
+                        <h5 class="card-title" style="font-size: 1.35em;">IDR 899.000</h5>
+                    </center>
+                    <div class="member mt-4">
+                        <ul>
+                            <li><i class="fa fa-check"></i> 6 Month Free Access</li>
+                            <li><i class="fa fa-check"></i> Online Training</li>
+                            <li><i class="fa fa-check"></i> Certified</li>
+                            <li><i class="fa fa-check"></i> Trainer</li>
+                        </ul>
+                    </div>
+                    <center>
+                        <a href="#" id="direct3" style="color: white; text-decoration: none;">
+                            <div class="direction3 mt-4 mb-4">Join</div>
+                        </a>
+                    </center>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron" style="margin-top: 7%; height: 554px;" id="ceo">
+        <div class="container" style="display: flex;">
+            <div class="contents">
+                <h1 class="display-4" style="font-family: 'Poppins Semibold';">Lucky Abdillah</h1>
+                <p class="lead mt-3" style="font-family: 'Poppins Medium';">Founder, Head Coach, buffmeup Fitness Center Ambassador</p>
+                <p class="lead mt-4" style="font-family: 'Poppins Medium'; width: 70%;">Master of Sports in rhythmic gymnastics, champion of Indonesia and two-time gold medalist of the World Championship.</p>
+                <p class="lead mt-4" style="font-family: 'Poppins Medium'; width: 80%;">From the age of 12, Lucky trained in the Indonesian national team under the guidance of I.A. Wiener. Working with the best coaches and 20 years of experience in the profession helped Lucky develop his own methodology, according to which 5 studios and a large team of professionals work today.</p>
+            </div>
+            <div class="img">
+                <!-- <img src="src/lucky2.png" alt="" style="position: relative; top: -117px; width: 280px;"> -->
+                <!-- <img src="src/luckyy.png" alt="" style="position: relative; top: -168px; width: 370px;"> -->
+                <img src="src/Lucky Abdillah2.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="alert" role="alert" id="footer" style="background-color: black; color: white;">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md">
+                    <div class="footer-atas" style="display: flex; gap: 4%; font-family: 'Poppins Semibold';">
+                        <a href="#">Questions and Answers</a>
+                        <a href="#">Health</a>
+                        <a href="#">Journey</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer-bawah mt-2" style="color: rgb(179, 179, 179); font-size: 0.9em;display: flex; gap: 4%;">
+                        <a href="#" style="">&copy; 2022 buffmeup</a>
+                        <a href="#">Public offer</a>
+                        <a href="#">Privacy</a>
+                        <a href="#">+62 812-8389-0098</a>
+                    </div>
+                </div>
+                <div class="col-md-3 mt-2" id="footer-kanan" style="font-size: 2em; display: flex; gap: 9%;">
+                    <a href=""><i class="fab fa-facebook"></i></a>
+                    <a href=""><i class="fab fa-telegram"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1750
+        });
+    </script>
+</body>
+</html>
