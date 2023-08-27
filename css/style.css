@@ -317,6 +317,12 @@ body {
     color: #96855e;
 }
 
+@media (max-width: 1199px) {
+    .hero .container .row .right:after {
+        left: 14em;
+    }
+}
+
 @media (max-width: 976px) {
     .navbar-nav a {
         margin-left: 0;
@@ -336,6 +342,11 @@ body {
 
     .hero .container .row .left {
         margin-top: 20vh;
+        text-align: center;
+    }
+
+    .hero .container .row .left p {
+        padding: 0 6em;
     }
 
     .hero .container .right {
