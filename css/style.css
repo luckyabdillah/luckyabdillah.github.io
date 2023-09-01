@@ -364,4 +364,8 @@ body {
     html {
         font-size: 75%;
     }
+
+    .container {
+        padding: 0 2em;
+    }
 }
