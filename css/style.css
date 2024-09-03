@@ -3,6 +3,10 @@ body {
     background-color: #2b1e17;
 }
 
+.navbar {
+    background-color: #2b1e17 !important;
+}
+
 .navbar-toggler:focus,
 .btn-close:focus {
     box-shadow: inset 0 0 0;
@@ -14,11 +18,6 @@ body {
 
 .navbar-nav a {
     margin-left: 2.5em;
-}
-
-.fixed-top.scrolled {
-    background-color: #2b1e17 !important;
-    transition: background-color 200ms linear;
 }
 
 .hero .container .row {
@@ -62,7 +61,7 @@ body {
     color: #d8c18a;
 }
 
-.myButton {
+.my-button {
     /* background-color: #d8c18a; */
     background-color: #e4c988;
     color: #2b1e17;
@@ -70,10 +69,62 @@ body {
     border-radius: 2em;
 }
 
-.myButton:hover {
+.my-button:hover {
     background-color: #96855e;
     color: white;
+}
+
+.my-button:active {
+    background-color: #96855e !important;
+    color: white !important;
+    border-color: #96855e !important;
+}
+
+.my-button-outline {
+    color: #e4c988;
+    border: 2px solid #e4c988;
+    font-weight: 500;
     border-radius: 2em;
+}
+
+.my-button-outline:hover {
+    background-color: #e4c988;
+    color: #2b1e17;
+}
+
+.my-button-outline-secondary {
+    border: 2px solid #2b1e17;
+    color: #2b1e17;
+}
+
+.my-button-outline-secondary:hover {
+    border: 2px solid #2b1e17;
+    background-color: #2b1e17;
+    color: white;
+}
+
+.my-button-outline-secondary:active {
+    border: 2px solid #443128 !important;
+    background-color: #443128 !important;
+    color: white !important;
+}
+
+.my-button-secondary {
+    color: white;
+    background-color: #2b1e17;
+    font-weight: 500;
+    border-radius: 2em;
+}
+
+.my-button-secondary:hover {
+    background-color: #443128;
+    color: white;
+}
+
+.my-button-secondary:active {
+    color: white !important;
+    background-color: #2b1e17 !important;
+    border-color: #2b1e17 !important;
 }
 
 .downside {
@@ -181,39 +232,34 @@ body {
     color: #94886d;
 }
 
-.tech .tech-img {
-    width: 4.5em;
-    height: 4.5em;
-    background-color: #d8c18a;
-    border-radius: 50%;
+.stack-container .nav-item a {
+    color: #2b1e17;
+    border-radius: 7px;
 }
 
-.tech .any-tech a {
-    color: #d8c18a;
-    text-decoration: none;
-    font-size: 2.3em;
-    margin-right: 0.6em;
+.stack-container .nav-item a.active {
+    color: white;
+    font-weight: 500;
+    background-color: #2b1e17;
 }
 
-.tech .any-tech .image {
-    /* position: relative; */
-    /* padding: 0.4em; */
-    background-color: #d8c18a;
-    max-width: 1.3em;
-    max-height: 1.3em;
-    border-radius: 50%;
+.tech-heading::after {
+    content: '';
+    display: block;
+    width: 80px;
+    border: 1px solid #2b1e17;
+    border-radius: 15px;
+    margin: 8px auto;
 }
 
-/* .tech .any-tech .image:after {
-    content: "";
-    position: absolute;
-    background-color: #d8c18a;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
-} */
+.sub-heading::after {
+    content: '';
+    display: block;
+    width: 40px;
+    border: 1px solid #2b1e17;
+    border-radius: 15px;
+    margin-top: 4px;
+}
 
 .blogs {
     padding: 6em 0;
@@ -251,7 +297,7 @@ body {
     line-height: 1.25em;
 }
 
-.blogs .card .myButton {
+.blogs .card .my-button {
     border-radius: 0 2em 2em 0;
     position: absolute;
     left: 0;
@@ -317,6 +363,40 @@ body {
     color: #96855e;
 }
 
+.modal-content {
+    font-size: .9rem;
+    padding: .7em .75em;
+}
+
+.modal .modal-footer .btn {
+    font-size: .9rem !important;
+    padding: 7px 15px;
+}
+
+.modal-title a {
+    color: black;
+    text-decoration: none;
+}
+
+.modal-title a:hover {
+    color: rgb(18, 121, 206);
+    text-decoration: underline;
+}
+
+.modal-header,
+.modal-footer {
+    margin: 0;
+    border: 0;
+}
+
+.modal-header {
+    padding-bottom: 0;
+}
+
+.modal-footer {
+    padding-top: 0;
+}
+
 @media (max-width: 1199px) {
     .hero .container .row .right:after {
         left: 14em;
@@ -346,11 +426,15 @@ body {
     }
 
     .hero .container .row .left p {
-        padding: 0 6em;
+        padding: 0 5em;
     }
 
     .hero .container .right {
         display: none;
+    }
+
+    .offcanvas {
+        max-width: 65%;
     }
 }
 
