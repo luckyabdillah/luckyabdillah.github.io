@@ -446,7 +446,7 @@ body {
 
 @media (max-width: 576px) {
     html {
-        font-size: 75%;
+        font-size: 85%;
     }
 
     .container {
