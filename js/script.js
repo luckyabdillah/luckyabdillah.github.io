@@ -225,7 +225,20 @@ $('.btn-send').on('click', function (e) {
     }
 
     if (name.value.length > 0 && message.value.length > 0) {
-        let url = `https://wa.me/6281283890098?text=${message.value}%0a%0a-${name.value}`;
+        let splittedMessage = message.value.split('\n');
+        let modifiedMessage = '';
+        if (splittedMessage.length > 1) {
+            splittedMessage.forEach((message, index) => {
+                if ((index + 1) == splittedMessage.length) {
+                    modifiedMessage += message;
+                } else {
+                    modifiedMessage += `${message}%0a`;
+                }
+            })
+        } else {
+            modifiedMessage = message.value;
+        }
+        let url = `https://wa.me/6281283890098?text=${modifiedMessage}%0a%0a-${name.value}`;
         window.open(url);
     } else {
         document.querySelector('.is-invalid').focus();
