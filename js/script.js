@@ -188,7 +188,7 @@ $(document).on('click', '.btn-show-project', function(e) {
     let url = `<a href="${data.url}" target="_blank">${data.title} <i class="bx bx-link-external" style="font-size: .9rem;"></i></a>`
     $('#portfolioModalLabel').html(url);
     $('.img-project').html(`<img src="img/${data.img}" alt="${data.title}" class="img-fluid" style="border: 2px solid #2b1e17; border-radius: 15px;">`);
-    $('.description').text(data.description);
+    $('.description').html(data.description);
     $('.visit-site').attr('href', data.url);
 
     let details = data.details;
