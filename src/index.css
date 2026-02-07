@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    @apply bg-dark text-white antialiased;
+  }
+
+  * {
+    @apply focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-light text-dark font-medium px-6 py-3 rounded-full 
+           transition-all duration-300 hover:bg-primary-dark hover:text-white 
+           hover:scale-102 active:scale-98;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary-light text-primary-light font-medium px-6 py-3 
+           rounded-full transition-all duration-300 hover:bg-primary-light 
+           hover:text-dark;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-500 hover:scale-105 hover:shadow-2xl 
+           hover:shadow-primary/20;
+  }
+  
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-light via-primary to-primary-dark 
+           bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .scale-98 {
+    @apply scale-95;
+  }
+  
+  .scale-102 {
+    @apply scale-105;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .scrollbar-custom-inner {
+    padding-right: 8px;
+  }
+
+  .scrollbar-custom-inner::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-custom-inner::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-custom-inner::-webkit-scrollbar-thumb {
+    background: #d8c18a;
+    border-radius: 3px;
+  }
+
+  .scrollbar-custom-inner::-webkit-scrollbar-thumb:hover {
+    background: #e4c988;
+  }
+
+  .tab-btn:focus,
+  .tab-btn:focus-visible,
+  .tab-btn:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .tab-btn:focus-visible {
+    outline: 2px solid transparent !important;
+  }
+}
