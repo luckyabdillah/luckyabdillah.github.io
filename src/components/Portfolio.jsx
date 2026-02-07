@@ -23,7 +23,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://structural-health-monitoring-one.vercel.app',
       description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization.',
-      img: '/src/assets/structural-health-monitoring.png',
+      img: '/img/structural-health-monitoring.png',
       details: [
         'Real-time data acquisition from IoT sensors',
         'Interactive data visualization dashboards',
@@ -36,7 +36,7 @@ const Portfolio = () => {
       company: 'MARHABA WEFADA',
       url: 'https://marhabawefada.sa',
       description: 'Comprehensive platform enabling travel agents to create, customize, and book tailored land arrangement packages.',
-      img: '/src/assets/marhabawefada-id.png',
+      img: '/img/marhabawefada-id.png',
       details: [
         'CMS Dashboard for Admin to manage service\'s price and suppliers',
         'SMTP Relay Service integrated using Brevo for Customer Notification',
@@ -50,7 +50,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://aljushoesclean.com',
       description: 'E-commerce solution for premium shoe cleaning and maintenance services.',
-      img: '/src/assets/aljushoesclean.png',
+      img: '/img/aljushoesclean.png',
       details: [
         'Product catalog with detailed specifications',
         'Online booking system',
@@ -64,7 +64,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://indonesian-quotes-api.vercel.app',
       description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes.',
-      img: '/src/assets/indonesian-quotes-api.png',
+      img: '/img/indonesian-quotes-api.png',
       details: [
         'Get all quotes',
         'Get all quotes by category',
@@ -79,7 +79,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://restaurant-erp.luckyabdillah.com',
       description: 'All-in-one web application for comprehensive restaurant management, from operations to accounting.',
-      img: '/src/assets/restaurant-erp.png',
+      img: '/img/restaurant-erp.png',
       details: [
         'Web-based POS application',
         'Market analysis chart',
@@ -93,7 +93,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://tracc.luckyabdillah.com',
       description: 'Tour & Travel Recording, Accounting, and Invoicing System for Business-to-Business (B2B) transaction.',
-      img: '/src/assets/tracc.png',
+      img: '/img/tracc.png',
       details: [
         'Tour & Travel Recording System',
         'Accounting System',
@@ -107,7 +107,7 @@ const Portfolio = () => {
       company: '',
       url: 'https://simpelbnnpjatim.com',
       description: 'Restructuring of the BNN service system website to enhance user experience and service efficiency.',
-      img: '/src/assets/simpelbnnpjatim.png',
+      img: '/img/simpelbnnpjatim.png',
       details: [
         'Layanan permohonan: (Sosialisasi, Audiensi, Asesmen Terpadu, Tes Urine Pribadi & Instansi)',
         'Layanan rehabilitasi: Pribadi & Instansi',
