@@ -227,42 +227,50 @@ const Portfolio = () => {
               className="bg-dark-lighter rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="overflow-y-auto scrollbar-custom-inner flex-1 p-8">
-              <img
-                src={selectedProject.img}
-                alt={selectedProject.title}
-                className="w-full h-64 object-cover rounded-xl mb-6"
-              />
-              <h3 className="text-3xl font-bold text-white mb-2">
-                {selectedProject.title}
-              </h3>
-              {selectedProject.company && (
-                <p className="text-primary-light text-xl mb-4">{selectedProject.company}</p>
-              )}
-              <p className="text-muted mb-6">{selectedProject.description}</p>
-              <a
-                href={selectedProject.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary inline-flex items-center gap-2 mb-6"
-              >
-                Visit Website <FiExternalLink />
-              </a>
-              <h4 className="text-xl font-bold text-white mb-3">Key Features:</h4>
-              <ul className="space-y-2">
-                {selectedProject.details.map((detail, idx) => (
-                  <li key={idx} className="text-muted flex items-start gap-3">
-                    <span className="text-primary-light mt-1">•</span>
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={() => setSelectedProject(null)}
-                className="btn-outline mt-8 w-full"
-              >
-                Close
-              </button>
+              <div className="overflow-y-auto scrollbar-custom-inner flex-1 p-4 sm:p-8">
+                <div className="mx-auto w-full max-w-[640px]">
+                  <img
+                    src={selectedProject.img}
+                    alt={selectedProject.title}
+                    className="w-full h-48 sm:h-64 object-cover rounded-xl mb-4 sm:mb-6"
+                  />
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                    {selectedProject.title}
+                  </h3>
+                  {selectedProject.company && (
+                    <p className="text-primary-light text-lg sm:text-xl mb-3 sm:mb-4">
+                      {selectedProject.company}
+                    </p>
+                  )}
+                  <p className="text-muted mb-5 sm:mb-6 text-sm sm:text-base">
+                    {selectedProject.description}
+                  </p>
+                  <div className="flex mb-6">
+                    <a
+                      href={selectedProject.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center gap-2"
+                    >
+                      Visit Website <FiExternalLink />
+                    </a>
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-bold text-white mb-3">Key Features:</h4>
+                  <ul className="space-y-2 text-left text-sm sm:text-base">
+                    {selectedProject.details.map((detail, idx) => (
+                      <li key={idx} className="text-muted flex items-start gap-3">
+                        <span className="text-primary-light mt-1">•</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <button
+                    onClick={() => setSelectedProject(null)}
+                    className="btn-outline mt-8 w-full"
+                  >
+                    Close
+                  </button>
+                </div>
               </div>
             </motion.div>
           </motion.div>

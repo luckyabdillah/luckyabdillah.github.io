@@ -60,10 +60,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
 
-  .scrollbar-custom-inner {
-    padding-right: 8px;
-  }
-
   .scrollbar-custom-inner::-webkit-scrollbar {
     width: 6px;
   }
