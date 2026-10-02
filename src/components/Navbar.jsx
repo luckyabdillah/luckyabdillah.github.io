@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Code2, Menu, Moon, Sun, X } from 'lucide-react';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { Button } from './ui/button';
+import { FaGithub } from 'react-icons/fa';
 
 const Navbar = ({ darkMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const Navbar = ({ darkMode, onToggleTheme }) => {
   return (
     <nav className="fixed z-50 w-full border-b border-border bg-dark/90 backdrop-blur-sm transition-all duration-300">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center py-5">
+        <div className="flex justify-between items-center py-4">
           {/* Logo - GitHub Icon */}
           <a
             href="https://github.com/luckyabdillah"
@@ -24,7 +25,7 @@ const Navbar = ({ darkMode, onToggleTheme }) => {
             rel="noopener noreferrer"
             className="text-foreground transition-colors hover:text-primary-light"
           >
-            <Code2 className="h-7 w-7" />
+            <FaGithub className="h-8 w-8" />
           </a>
 
           {/* Desktop Menu */}

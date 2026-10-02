@@ -72,7 +72,7 @@ const Portfolio = () => {
         </div>
 
         <div className="flex justify-center">
-          <Button onClick={() => setShowAll((value) => !value)} variant="outline" className="rounded-full px-8">{showAll ? 'Show Less' : 'Show More'}</Button>
+          <Button onClick={() => setShowAll((value) => !value)} className="rounded-full px-8 py-5">{showAll ? 'Show Less' : 'Show More'}</Button>
         </div>
 
         <Dialog open={Boolean(selectedProject)} onOpenChange={(open) => !open && setSelectedProject(null)}>
@@ -101,7 +101,7 @@ const Portfolio = () => {
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 p-6 pt-3 sm:p-8 sm:pt-3">
-                <Button render={<a href={selectedProject.url} target="_blank" rel="noopener noreferrer" />} className="rounded-full px-4">Visit website <ExternalLink className="h-4 w-4" /></Button><Button onClick={() => setSelectedProject(null)} variant="outline" className="rounded-full">Close</Button>
+                <Button render={<a href={selectedProject.url} target="_blank" rel="noopener noreferrer" />} className="rounded-full py-4 px-4">Visit website</Button><Button onClick={() => setSelectedProject(null)} variant="outline" className="rounded-full py-4">Close</Button>
               </div>
             </DialogContent>
           )}

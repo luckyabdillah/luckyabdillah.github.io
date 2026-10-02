@@ -44,7 +44,7 @@ const Hero = () => (
 
         <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2, duration: 0.8 }} className="relative mx-auto w-full max-w-md lg:mr-0">
           <div className="absolute -inset-3 rounded-[2rem] border border-primary-light/30" />
-          <div className="relative overflow-hidden rounded-[1.5rem] bg-muted">
+          <div className="relative overflow-hidden rounded-[1.5rem] bg-orange-200">
             <img src="/img/lucky.png" alt="Lucky Abdillah" className="block w-full object-contain object-bottom" />
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/50 to-transparent" />
           </div>
