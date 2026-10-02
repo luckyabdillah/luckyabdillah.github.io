@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { FaGithub } from 'react-icons/fa';
+import { Code2, Menu, Moon, Sun, X } from 'lucide-react';
+import { Button } from './ui/button';
 
-const Navbar = () => {
+const Navbar = ({ darkMode, onToggleTheme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-dark/95 backdrop-blur-sm shadow-xl transition-all duration-300">
+    <nav className="fixed z-50 w-full border-b border-border bg-dark/90 backdrop-blur-sm transition-all duration-300">
       <div className="container mx-auto px-6">
         <div className="flex justify-between items-center py-5">
           {/* Logo - GitHub Icon */}
@@ -22,9 +22,9 @@ const Navbar = () => {
             href="https://github.com/luckyabdillah"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-3xl text-white hover:text-primary-light hover:scale-110 transition-all duration-300"
+            className="text-foreground transition-colors hover:text-primary-light"
           >
-            <FaGithub />
+            <Code2 className="h-7 w-7" />
           </a>
 
           {/* Desktop Menu */}
@@ -33,7 +33,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-white hover:text-primary-light transition-colors duration-300 font-medium relative group"
+                className="group relative text-foreground transition-colors duration-300 hover:text-primary-light"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-light transition-all duration-300 group-hover:w-full"></span>
@@ -42,12 +42,14 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-primary-light text-3xl focus:outline-none hover:scale-110 transition-transform"
-          >
-            {isOpen ? <FiX /> : <FiMenu />}
-          </button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="icon-lg" onClick={onToggleTheme} aria-label="Toggle theme">
+              {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <Button variant="ghost" size="icon-lg" onClick={() => setIsOpen(!isOpen)} className="md:hidden" aria-label="Toggle menu">
+              {isOpen ? <X /> : <Menu />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -62,7 +64,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block text-white hover:text-primary-light hover:pl-4 transition-all duration-300 font-medium"
+                className="block font-medium text-foreground transition-all duration-300 hover:pl-4 hover:text-primary-light"
               >
                 {link.name}
               </a>

@@ -1,280 +1,106 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { FiExternalLink } from 'react-icons/fi';
+import { useState } from 'react';
+import { ExternalLink } from 'lucide-react';
+import { Button } from './ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from './ui/dialog';
+
+const projects = [
+  {
+    title: 'Structural Health Monitoring System', company: '', url: 'https://structural-health-monitoring-one.vercel.app', img: '/img/structural-health-monitoring.png',
+    description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization.',
+    details: ['Real-time data acquisition from IoT sensors', 'Interactive data visualization dashboards', 'Automated alert system for structural anomalies', 'Real-time chart updates'],
+  },
+  {
+    title: 'B2B Travel Platform', company: 'MARHABA WEFADA', url: 'https://marhabawefada.sa', img: '/img/marhabawefada-id.png',
+    description: 'Comprehensive platform enabling travel agents to create, customize, and book tailored land arrangement packages.',
+    details: ["CMS Dashboard for Admin to manage service's price and suppliers", 'SMTP Relay Service integrated using Brevo for Customer Notification', 'Service-based commission for Travel Agency / Sales Agent', 'White-label distribution with customizable quotation and invoice', 'Passport reader and face recognition tools'],
+  },
+  {
+    title: 'Alju Shoes Clean', company: 'Alju Shoes', url: 'https://aljushoesclean.com', img: '/img/aljushoesclean.png',
+    description: 'E-commerce solution for premium shoe cleaning and maintenance services.',
+    details: ['Product catalog with detailed specifications', 'Online booking system', 'Geocoding API integrated using distancematrix.ai', 'Distance Matrix API for calculating actual distance', 'WhatsApp API integrated using fonnte Indonesia'],
+  },
+  {
+    title: 'Indonesian Quotes API', company: '', url: 'https://indonesian-quotes-api.vercel.app', img: '/img/indonesian-quotes-api.png',
+    description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes.',
+    details: ['Get all quotes', 'Get all quotes by category', 'Get quotes by ID', 'Get random quotes', 'Get random quotes by category', 'Submit own quotes'],
+  },
+  {
+    title: 'Restaurant ERP System', company: '', url: 'https://restaurant-erp.luckyabdillah.com', img: '/img/restaurant-erp.png',
+    description: 'All-in-one web application for comprehensive restaurant management, from operations to accounting.',
+    details: ['Web-based POS application', 'Market analysis chart', 'Logistic & Stock Opname', 'Finance & Accounting', 'Employee Affairs & Payroll'],
+  },
+  {
+    title: 'Tracc', company: '', url: 'https://tracc.luckyabdillah.com', img: '/img/tracc.png',
+    description: 'Tour & Travel Recording, Accounting, and Invoicing System for B2B transactions.',
+    details: ['Tour & Travel Recording System', 'Accounting System', 'Invoicing System', 'Expense Management', 'Financial Reporting'],
+  },
+  {
+    title: 'Sistem Pelayanan BNN Provinsi Jatim', company: 'BNN Provinsi Jatim', url: 'https://simpelbnnpjatim.com', img: '/img/simpelbnnpjatim.png',
+    description: 'Restructuring of the BNN service system website to enhance user experience and service efficiency.',
+    details: ['Layanan permohonan: Sosialisasi, Audiensi, Asesmen Terpadu, Tes Urine', 'Layanan rehabilitasi pribadi & instansi', 'Layanan pengaduan'],
+  },
+];
 
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
-  // Handle ESC key to close modal
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape' && selectedProject) {
-        setSelectedProject(null);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [selectedProject]);
-
-  const projects = [
-    {
-      title: 'Structural Health Monitoring System',
-      company: '',
-      url: 'https://structural-health-monitoring-one.vercel.app',
-      description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization.',
-      img: '/img/structural-health-monitoring.png',
-      details: [
-        'Real-time data acquisition from IoT sensors',
-        'Interactive data visualization dashboards',
-        'Automated alert system for structural anomalies',
-        'Real-time chart updates'
-      ],
-    },
-    {
-      title: 'B2B Travel Platform',
-      company: 'MARHABA WEFADA',
-      url: 'https://marhabawefada.sa',
-      description: 'Comprehensive platform enabling travel agents to create, customize, and book tailored land arrangement packages.',
-      img: '/img/marhabawefada-id.png',
-      details: [
-        'CMS Dashboard for Admin to manage service\'s price and suppliers',
-        'SMTP Relay Service integrated using Brevo for Customer Notification',
-        'Service-based commission for Travel Agency / Sales Agent',
-        'White-label distribution with customizable quotation and invoice',
-        'Passport reader and face recognition tools',
-      ],
-    },
-    {
-      title: 'Alju Shoes Clean',
-      company: '',
-      url: 'https://aljushoesclean.com',
-      description: 'E-commerce solution for premium shoe cleaning and maintenance services.',
-      img: '/img/aljushoesclean.png',
-      details: [
-        'Product catalog with detailed specifications',
-        'Online booking system',
-        'Geocoding API integrated using distancematrix.ai to translate raw address to earth coordinates',
-        'Distance Matrix API using distancematrix.ai to calculate actual distance between origins and destinations.',
-        'WhatsApp API integrated using fonnte Indonesia',
-      ],
-    },
-    {
-      title: 'Indonesian Quotes API',
-      company: '',
-      url: 'https://indonesian-quotes-api.vercel.app',
-      description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes.',
-      img: '/img/indonesian-quotes-api.png',
-      details: [
-        'Get all quotes',
-        'Get all quotes by category',
-        'Get quotes by ID',
-        'Get random quotes',
-        'Get random quotes by category',
-        'Submit own quotes',
-      ],
-    },
-    {
-      title: 'Restaurant ERP System',
-      company: '',
-      url: 'https://restaurant-erp.luckyabdillah.com',
-      description: 'All-in-one web application for comprehensive restaurant management, from operations to accounting.',
-      img: '/img/restaurant-erp.png',
-      details: [
-        'Web-based POS application',
-        'Market analysis chart',
-        'Logistic & Stock Opname',
-        'Finance & Accounting',
-        'Employee Affairs & Payroll',
-      ],
-    },
-    {
-      title: 'Tracc',
-      company: '',
-      url: 'https://tracc.luckyabdillah.com',
-      description: 'Tour & Travel Recording, Accounting, and Invoicing System for Business-to-Business (B2B) transaction.',
-      img: '/img/tracc.png',
-      details: [
-        'Tour & Travel Recording System',
-        'Accounting System',
-        'Invoicing System',
-        'Expense Management',
-        'Financial Reporting',
-      ],
-    },
-    {
-      title: 'Sistem Pelayanan BNN Provinsi Jatim',
-      company: '',
-      url: 'https://simpelbnnpjatim.com',
-      description: 'Restructuring of the BNN service system website to enhance user experience and service efficiency.',
-      img: '/img/simpelbnnpjatim.png',
-      details: [
-        'Layanan permohonan: (Sosialisasi, Audiensi, Asesmen Terpadu, Tes Urine Pribadi & Instansi)',
-        'Layanan rehabilitasi: Pribadi & Instansi',
-        'Layanan pengaduan',
-      ],
-    },
-  ];
-
   return (
     <section id="portfolio" className="section-padding bg-dark-light">
       <div className="container mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h4 className="text-primary-light text-xl font-semibold mb-3">Portfolio</h4>
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Latest Projects</h3>
-          <p className="text-muted text-lg">
-            Explore my portfolio of innovative projects. Each one represents my passion for solving real-world problems with elegant code.
-          </p>
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} viewport={{ once: true }} className="mx-auto mb-16 max-w-4xl">
+          <div className="mb-6 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-light"><span className="h-px w-10 bg-primary-light" /> Selected work</div>
+          <h3 className="max-w-3xl text-4xl font-semibold tracking-tight text-foreground md:text-6xl">A few things I&apos;ve helped bring into the world.</h3>
+          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">From sensor dashboards to travel operations, these are products shaped around real constraints and real people.</p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="mx-auto mb-12 grid max-w-6xl gap-6 md:grid-cols-2">
           {projects.slice(0, showAll ? projects.length : 4).map((project, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="group cursor-pointer"
-              onClick={() => setSelectedProject(project)}
-            >
-              <div className="relative overflow-hidden rounded-2xl bg-dark-lighter shadow-xl card-hover">
-                {/* Image */}
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
-                    <div className="text-white text-xl font-semibold flex items-center gap-2">
-                      View Project <FiExternalLink />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h5 className="text-xl font-bold text-white mb-2">
-                    {project.title}
-                    {project.company && (
-                      <span className="text-primary-light"> | {project.company}</span>
-                    )}
-                  </h5>
-                  <p className="text-muted line-clamp-2">{project.description}</p>
-                </div>
+            <motion.button key={project.title} type="button" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: idx * 0.1 }} viewport={{ once: true }} className="group cursor-pointer text-left" onClick={() => setSelectedProject(project)}>
+              <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-sm card-hover">
+                <div className="relative overflow-hidden"><img src={project.img} alt={project.title} className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"><div className="flex items-center gap-2 text-xl font-semibold text-white">View project <ExternalLink className="h-5 w-5" /></div></div></div>
+                <div className="flex flex-col justify-between p-6 md:p-8"><div><p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{String(idx + 1).padStart(2, '0')} / {project.company || 'Independent build'}</p><h5 className="mb-3 text-xl font-semibold tracking-tight text-foreground md:text-2xl">{project.title}</h5><p className="line-clamp-3 text-muted-foreground">{project.description}</p></div><p className="mt-8 flex items-center gap-2 text-sm font-medium text-primary-light">Open case study <ExternalLink className="h-4 w-4" /></p></div>
               </div>
-            </motion.div>
+            </motion.button>
           ))}
         </div>
 
-        {/* Show More Button */}
-        {!showAll && projects.length > 4 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="flex justify-center mt-16"
-          >
-            <button
-              onClick={() => setShowAll(true)}
-              className="btn-outline text-lg px-8 py-3"
-            >
-              Show More
-            </button>
-          </motion.div>
-        )}
+        <div className="flex justify-center">
+          <Button onClick={() => setShowAll((value) => !value)} variant="outline" className="rounded-full px-8">{showAll ? 'Show Less' : 'Show More'}</Button>
+        </div>
 
-        {/* Show Less Button */}
-        {showAll && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex justify-center mt-16"
-          >
-            <button
-              onClick={() => setShowAll(false)}
-              className="btn-outline text-lg px-8 py-3"
-            >
-              Show Less
-            </button>
-          </motion.div>
-        )}
-
-        {/* Project Modal */}
-        {selectedProject && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
-            onClick={() => setSelectedProject(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-dark-lighter rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-hidden flex flex-col"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="overflow-y-auto scrollbar-custom-inner flex-1 p-4 sm:p-8">
-                <div className="mx-auto w-full max-w-[640px]">
-                  <img
-                    src={selectedProject.img}
-                    alt={selectedProject.title}
-                    className="w-full h-48 sm:h-64 object-cover rounded-xl mb-4 sm:mb-6"
-                  />
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                    {selectedProject.title}
-                  </h3>
-                  {selectedProject.company && (
-                    <p className="text-primary-light text-lg sm:text-xl mb-3 sm:mb-4">
-                      {selectedProject.company}
-                    </p>
-                  )}
-                  <p className="text-muted mb-5 sm:mb-6 text-sm sm:text-base">
-                    {selectedProject.description}
+        <Dialog open={Boolean(selectedProject)} onOpenChange={(open) => !open && setSelectedProject(null)}>
+          {selectedProject && (
+            <DialogContent className="max-h-[90vh] max-w-4xl overflow-hidden p-0">
+              <div className="-mx-4 no-scrollbar max-h-[75vh] overflow-y-auto">
+                <div className="relative flex w-full items-center justify-center overflow-hidden bg-muted">
+                  <img src={selectedProject.img} alt={selectedProject.title} className="h-full w-full object-contain" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
+                  <p className="absolute bottom-5 left-8 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 drop-shadow-sm sm:left-10">
+                    Project {String(projects.indexOf(selectedProject) + 1).padStart(2, '0')}
                   </p>
-                  <div className="flex mb-6">
-                    <a
-                      href={selectedProject.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center gap-2"
-                    >
-                      Visit Website <FiExternalLink />
-                    </a>
+                </div>
+                <div className="p-6 px-8 sm:p-8 sm:px-10">
+                  <div className="mb-7 max-w-2xl">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-primary-light">{selectedProject.company || 'Independent build'}</p>
+                    <DialogTitle className="text-3xl font-semibold leading-tight tracking-tight text-foreground sm:text-4xl">{selectedProject.title}</DialogTitle>
+                    <DialogDescription className="mt-4 text-base leading-relaxed">{selectedProject.description}</DialogDescription>
                   </div>
-                  <h4 className="text-lg sm:text-xl font-bold text-white mb-3">Key Features:</h4>
-                  <ul className="space-y-2 text-left text-sm sm:text-base">
-                    {selectedProject.details.map((detail, idx) => (
-                      <li key={idx} className="text-muted flex items-start gap-3">
-                        <span className="text-primary-light mt-1">•</span>
-                        <span>{detail}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    onClick={() => setSelectedProject(null)}
-                    className="btn-outline mt-8 w-full"
-                  >
-                    Close
-                  </button>
+                  <div className="border-y border-border py-5">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">What it includes</p>
+                    <ul className="grid gap-3 sm:grid-cols-2">
+                      {selectedProject.details.map((detail) => <li key={detail} className="flex items-start gap-2 text-sm leading-relaxed text-foreground"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light" />{detail}</li>)}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
+              <div className="flex flex-wrap gap-3 p-6 pt-3 sm:p-8 sm:pt-3">
+                <Button render={<a href={selectedProject.url} target="_blank" rel="noopener noreferrer" />} className="rounded-full px-4">Visit website <ExternalLink className="h-4 w-4" /></Button><Button onClick={() => setSelectedProject(null)} variant="outline" className="rounded-full">Close</Button>
+              </div>
+            </DialogContent>
+          )}
+        </Dialog>
       </div>
     </section>
   );

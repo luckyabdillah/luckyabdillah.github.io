@@ -36,7 +36,7 @@ const Blogs = () => {
         >
           <h4 className="text-primary-light text-xl font-semibold mb-3">Insights</h4>
           <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Latest Blogs</h3>
-          <p className="text-muted text-lg">
+          <p className="text-muted-foreground text-lg">
             Sharing knowledge and experiences from my journey in software development
           </p>
         </motion.div>
@@ -60,7 +60,7 @@ const Blogs = () => {
               <h4 className="text-2xl font-bold text-white mb-3 group-hover:text-primary-light transition-colors">
                 {blog.title}
               </h4>
-              <p className="text-muted leading-relaxed">{blog.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{blog.description}</p>
             </motion.a>
           ))}
         </div>

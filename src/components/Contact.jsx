@@ -39,7 +39,7 @@ const Contact = () => {
         >
           <h4 className="text-primary-light text-xl font-semibold mb-3">Get In Touch</h4>
           <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Contact Me</h3>
-          <p className="text-muted text-lg">
+          <p className="text-muted-foreground text-lg">
             Have a project in mind or want to collaborate? Let's connect!
           </p>
         </motion.div>
@@ -55,8 +55,8 @@ const Contact = () => {
           >
             <div>
               <h4 className="text-2xl font-bold text-white mb-6">Let's work together!</h4>
-              <p className="text-muted text-lg leading-relaxed mb-8">
-                Whether you prefer email, forms, or social media—reach out and let's connect!
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+                Whether you prefer email, forms, or social media. Reach out and let's connect!
               </p>
             </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
                   <FiMail className="text-primary-light text-2xl" />
                 </div>
                 <div>
-                  <p className="text-muted text-sm">Email</p>
+                  <p className="text-muted-foreground text-sm">Email</p>
                   <a href="mailto:luckyabdillah00@gmail.com" className="text-white hover:text-primary-light transition-colors text-lg">
                     luckyabdillah00@gmail.com
                   </a>
@@ -78,7 +78,7 @@ const Contact = () => {
                   <FiMapPin className="text-primary-light text-2xl" />
                 </div>
                 <div>
-                  <p className="text-muted text-sm">Location</p>
+                  <p className="text-muted-foreground text-sm">Location</p>
                   <p className="text-white text-lg">Indonesia</p>
                 </div>
               </div>

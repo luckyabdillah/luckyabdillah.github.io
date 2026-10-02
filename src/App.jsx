@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
@@ -7,9 +8,16 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
+  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', darkMode);
+    localStorage.setItem('theme', darkMode ? 'dark' : 'light');
+  }, [darkMode]);
+
   return (
-    <div className="overflow-x-hidden">
-      <Navbar />
+    <div className={darkMode ? 'dark overflow-x-hidden' : 'overflow-x-hidden'}>
+      <Navbar darkMode={darkMode} onToggleTheme={() => setDarkMode((value) => !value)} />
       <Hero />
       <Portfolio />
       <Tech />

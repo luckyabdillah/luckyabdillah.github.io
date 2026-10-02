@@ -7,20 +7,47 @@ export default {
   theme: {
     extend: {
       colors: {
+        background: 'var(--background)',
+        card: {
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
+        },
+        popover: {
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
+        },
         primary: {
-          DEFAULT: '#d8c18a',
-          light: '#e4c988',
-          dark: '#96855e',
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
+          light: 'var(--primary-light)',
+          dark: 'var(--primary-dark)',
         },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
+        },
+        accent: {
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
+        },
+        destructive: 'var(--destructive)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
         dark: {
-          DEFAULT: '#2b1e17',
-          light: '#3d2f26',
-          lighter: '#4f3f35',
+          DEFAULT: 'var(--background)',
+          light: 'var(--muted)',
+          lighter: 'var(--card)',
         },
-        muted: '#94886d',
+        muted: 'var(--muted-foreground)',
+        border: 'var(--border)',
+        foreground: 'var(--foreground)',
+      },
+      outlineColor: {
+        ring: 'var(--ring)',
       },
       fontFamily: {
-        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['Geist', 'ui-sans-serif', 'sans-serif'],
+        montserrat: ['Geist', 'ui-sans-serif', 'sans-serif'],
       },
       scale: {
         '98': '0.98',

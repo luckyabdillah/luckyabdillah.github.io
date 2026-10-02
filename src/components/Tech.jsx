@@ -1,6 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPython, SiPhp, SiLaravel, SiMysql, SiPostgresql, SiMongodb, SiDocker, SiGit, SiTailwindcss, SiNextdotjs, SiVuedotjs, SiNuxtdotjs, SiExpress, SiKotlin, SiSwift, SiCss3, SiHtml5, SiBootstrap, SiGraphql, SiRedis, SiJenkins, SiAmazon, SiGooglecloud, SiCplusplus, SiJquery, SiFirebase, SiVercel, SiGithub, SiArduino, SiRaspberrypi, SiJouav, SiVite, SiLinux, SiNginx, SiEspressif, SiSqlite, SiPostman, SiJsonwebtokens, SiSass, SiSelenium, SiNextui, SiDaisyui, SiEjs, SiCodeigniter, SiFlutter } from 'react-icons/si';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
+import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPython, SiPhp, SiLaravel, SiMysql, SiPostgresql, SiMongodb, SiDocker, SiGit, SiTailwindcss, SiNextdotjs, SiVuedotjs, SiNuxtdotjs, SiExpress, SiKotlin, SiSwift, SiCss3, SiHtml5, SiBootstrap, SiGraphql, SiRedis, SiJenkins, SiAmazon, SiGooglecloud, SiCplusplus, SiJquery, SiFirebase, SiVercel, SiGithub, SiArduino, SiRaspberrypi, SiJouav, SiVite, SiLinux, SiNginx, SiEspressif, SiSqlite, SiPostman, SiJsonwebtokens, SiSass, SiSelenium, SiNextui, SiDaisyui, SiEjs, SiCodeigniter, SiFlutter, SiShadcnui, SiDjango, SiSpring, SiSpringboot } from 'react-icons/si';
 import { BiLogoJava } from 'react-icons/bi';
 
 const Tech = () => {
@@ -11,35 +12,38 @@ const Tech = () => {
       { name: 'JavaScript', Icon: SiJavascript, color: 'text-yellow-400' },
       { name: 'TypeScript', Icon: SiTypescript, color: 'text-blue-500' },
       { name: 'Python', Icon: SiPython, color: 'text-blue-400' },
+      { name: 'Java', Icon: BiLogoJava, color: 'text-red-600' },
       { name: 'PHP', Icon: SiPhp, color: 'text-indigo-400' },
       { name: 'Flutter', Icon: SiFlutter, color: 'text-cyan-400' },
-      { name: 'Java', Icon: BiLogoJava, color: 'text-red-600' },
       { name: 'Kotlin', Icon: SiKotlin, color: 'text-purple-500' },
     //   { name: 'Swift', Icon: SiSwift, color: 'text-orange-500' },
     ],
     'Frontend': [
       { name: 'React', Icon: SiReact, color: 'text-cyan-400' },
-      { name: 'Next.js', Icon: SiNextdotjs, color: 'text-white' },
     //   { name: 'Vue.js', Icon: SiVuedotjs, color: 'text-green-400' },
     //   { name: 'Nuxt', Icon: SiNuxtdotjs, color: 'text-green-500' },
       { name: 'Vite', Icon: SiVite, color: 'text-purple-400' },
       { name: 'Tailwind', Icon: SiTailwindcss, color: 'text-cyan-400' },
-      { name: 'EJS', Icon: SiEjs, color: 'text-yellow-600' },
+      { name: 'shadcn/ui', Icon: SiShadcnui, color: 'text-black-400' },
+      { name: 'Next.js', Icon: SiNextdotjs, color: 'text-white' },
       { name: 'NextUI', Icon: SiNextui, color: 'text-gray-400' },
-      { name: 'Bootstrap', Icon: SiBootstrap, color: 'text-purple-600' },
-      { name: 'SASS', Icon: SiSass, color: 'text-pink-500' },
-      { name: 'jQuery', Icon: SiJquery, color: 'text-blue-400' },
+      { name: 'EJS', Icon: SiEjs, color: 'text-yellow-600' },
+      // { name: 'Bootstrap', Icon: SiBootstrap, color: 'text-purple-600' },
+      // { name: 'SASS', Icon: SiSass, color: 'text-pink-500' },
+      // { name: 'jQuery', Icon: SiJquery, color: 'text-blue-400' },
       // { name: 'HTML5', Icon: SiHtml5, color: 'text-orange-600' },
       // { name: 'CSS3', Icon: SiCss3, color: 'text-blue-600' },
     ],
     'Backend': [
       { name: 'Node.js', Icon: SiNodedotjs, color: 'text-green-500' },
+      { name: 'Django', Icon: SiDjango, color: 'text-black-600' },
+      { name: 'Spring Boot', Icon: SiSpringboot, color: 'text-green-700' },
       { name: 'Express.js', Icon: SiExpress, color: 'text-gray-400' },
-      { name: 'Laravel', Icon: SiLaravel, color: 'text-red-500' },
-      { name: 'GraphQL', Icon: SiGraphql, color: 'text-pink-500' },
       { name: 'Firebase', Icon: SiFirebase, color: 'text-yellow-400' },
+      { name: 'Laravel', Icon: SiLaravel, color: 'text-red-500' },
+      // { name: 'GraphQL', Icon: SiGraphql, color: 'text-pink-500' },
       { name: 'CodeIgniter', Icon: SiCodeigniter, color: 'text-red-600' },
-      { name: 'JWT Auth', Icon: SiJsonwebtokens, color: 'text-blue-500' },
+      // { name: 'JWT Auth', Icon: SiJsonwebtokens, color: 'text-blue-500' },
     ],
     'Database': [
       { name: 'MySQL', Icon: SiMysql, color: 'text-orange-400' },
@@ -71,66 +75,59 @@ const Tech = () => {
   };
 
   return (
-    <section id="tech" className="section-padding bg-dark">
+    <section id="tech" className="section-padding bg-dark px-6">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="mb-12 grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end"
         >
-          <h4 className="text-primary-light text-xl font-semibold mb-3">Technologies</h4>
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Tech Stack</h3>
-          <p className="text-muted text-lg">
-            Tools and technologies I use to bring ideas to life
+          <div>
+            <p className="mb-4 flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-light">
+              <span className="h-px w-10 bg-primary-light" /> Toolkit
+            </p>
+            <h3 className="text-4xl font-semibold tracking-tight text-foreground md:text-6xl">Tools I reach for often.</h3>
+          </div>
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground lg:justify-self-end">
+            A practical stack shaped by the products I build: reliable backends, thoughtful interfaces, and the infrastructure that connects them.
           </p>
         </motion.div>
 
-        {/* Tabs Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {Object.keys(techGroups).map((tab) => (
-            <motion.button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              type="button"
-              className={`tab-btn px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeTab === tab
-                  ? 'bg-primary-light text-dark shadow-lg shadow-primary/40'
-                  : 'bg-dark-lighter text-primary-light border border-primary-light/30 hover:border-primary-light/60'
-              }`}
-            >
-              {tab}
-            </motion.button>
-          ))}
-        </div>
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-12">
+          <TabsList className="grid h-auto w-full grid-cols-2 gap-2 bg-transparent p-0 sm:grid-cols-3 lg:block lg:space-y-2">
+            {Object.keys(techGroups).map((tab) => (
+              <TabsTrigger key={tab} value={tab} className="!h-auto !flex-none justify-between rounded-lg border border-border bg-dark-lighter px-3 py-3 text-left text-xs font-medium text-muted-foreground transition-all data-[state=active]:border-primary-light data-[state=active]:bg-primary-light data-[state=active]:text-dark sm:px-4 sm:text-sm lg:w-full">
+                <span>{tab}</span>
+                <span className="ml-6 text-xs opacity-60">{String(techGroups[tab].length).padStart(2, '0')}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
 
-        {/* Tech Grid */}
-        <div className="max-w-6xl mx-auto">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeTab}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6"
-            >
-              {techGroups[activeTab].map((tech, idx) => (
-                <motion.div
-                  key={`${activeTab}-${idx}`}
-                  transition={{ duration: 0.1 }}
-                  whileHover={{ scale: 1.1, rotate: 2 }}
-                  className="flex flex-col items-center gap-3 p-6 bg-dark-lighter rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300"
-                >
-                  <tech.Icon className={`text-5xl ${tech.color}`} />
-                  <span className="text-white font-medium text-sm text-center">{tech.name}</span>
-                </motion.div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
-        </div>
+          {Object.entries(techGroups).map(([tab, technologies]) => (
+            <TabsContent key={tab} value={tab} className="mt-0 rounded-2xl border border-border bg-dark-lighter p-5 md:p-8">
+              <div className="mb-6 flex items-end justify-between border-b border-border pb-5">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Category</p>
+                  <h4 className="mt-2 text-2xl font-semibold text-foreground">{tab}</h4>
+                </div>
+                <p className="text-sm text-muted-foreground">{technologies.length} technologies</p>
+              </div>
+              <div className="grid gap-x-8 md:grid-cols-2">
+                {technologies.map((tech, idx) => (
+                  <motion.div key={`${tab}-${idx}`} whileHover={{ x: 4 }} className="flex items-center justify-between border-b border-border/70 py-4">
+                    <div className="flex items-center gap-3">
+                      <tech.Icon className={`text-2xl ${tech.color}`} />
+                      <span className="font-medium text-foreground">{tech.name}</span>
+                    </div>
+                    <span className="text-xs text-muted-foreground">{String(idx + 1).padStart(2, '0')}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </TabsContent>
+          ))}
+        </Tabs>
       </div>
     </section>
   );
