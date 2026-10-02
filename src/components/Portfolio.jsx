@@ -21,19 +21,19 @@ const projects = [
     details: ["CMS Dashboard for Admin to manage service's price and suppliers", 'SMTP Relay Service integrated using Brevo for Customer Notification', 'Service-based commission for Travel Agency / Sales Agent', 'White-label distribution with customizable quotation and invoice', 'Passport reader and face recognition tools'],
   },
   {
-    title: 'AudioLDM API', company: 'Open source', url: 'https://github.com/luckyabdillah/audioldm-api', img: 'https://opengraph.githubassets.com/1/luckyabdillah/audioldm-api',
-    description: 'A Flask API for generating audio effects with AudioLDM v1, including prompt translation, background processing, language detection, enhancement, and WAV file delivery.',
-    details: ['Background processing for audio generation', 'AudioLDM v1 and NLLB model integration', 'Automatic language detection with configurable fallback', 'WAV output served through a public media URL', 'Health check, CORS, and Gunicorn deployment support'],
+    title: 'Indonesian Quotes API', company: 'Open source', url: 'https://indonesian-quotes-api.vercel.app', img: 'https://opengraph.githubassets.com/1/luckyabdillah/indonesian-quotes-api',
+    description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes. Supports retrieval by category, ID, and random selection, with options for users to submit their own quotes.',
+    details: ['Get all quotes', 'Get all quotes by category', 'Get quotes by ID', 'Get random quotes', 'Get random quotes by category', 'Submit own quotes'],
   },
   {
     title: 'Alju Shoes Clean', company: 'Alju Shoes', url: 'https://aljushoesclean.com', img: '/img/aljushoesclean.png',
-    description: 'E-commerce solution for premium shoe cleaning and maintenance services.',
+    description: 'E-commerce solution for premium shoe cleaning and maintenance services. Enables customers to book services, track orders, and access shoe care tips through a user-friendly online platform.',
     details: ['Product catalog with detailed specifications', 'Online booking system', 'Geocoding API integrated using distancematrix.ai', 'Distance Matrix API for calculating actual distance', 'WhatsApp API integrated using fonnte Indonesia'],
   },
   {
-    title: 'Indonesian Quotes API', company: '', url: 'https://indonesian-quotes-api.vercel.app', img: '/img/indonesian-quotes-api.png',
-    description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes.',
-    details: ['Get all quotes', 'Get all quotes by category', 'Get quotes by ID', 'Get random quotes', 'Get random quotes by category', 'Submit own quotes'],
+    title: 'AudioLDM API', company: 'Open source', url: 'https://github.com/luckyabdillah/audioldm-api', img: 'https://opengraph.githubassets.com/1/luckyabdillah/audioldm-api',
+    description: 'A Flask API for generating audio effects with AudioLDM v1, including prompt translation, background processing, language detection, enhancement, and WAV file delivery.',
+    details: ['Background processing for audio generation', 'AudioLDM v1 and NLLB model integration', 'Automatic language detection with configurable fallback', 'WAV output served through a public media URL', 'Health check, CORS, and Gunicorn deployment support'],
   },
   {
     title: 'Restaurant ERP System', company: '', url: 'https://restaurant-erp.luckyabdillah.com', img: '/img/restaurant-erp.png',
@@ -63,7 +63,7 @@ const Portfolio = () => {
         <div className="mx-auto mb-12 grid max-w-6xl gap-6 md:grid-cols-2">
           {projects.slice(0, showAll ? projects.length : 4).map((project, idx) => (
             <motion.button key={project.title} type="button" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: idx * 0.1 }} viewport={{ once: true }} className="group cursor-pointer text-left" onClick={() => setSelectedProject(project)}>
-              <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-sm card-hover">
+              <div className="relative overflow-hidden rounded-xl border border-border bg-card shadow-sm card-hover h-full">
                 <div className="relative overflow-hidden"><img src={project.img} alt={project.title} className="h-64 w-full object-cover transition-transform duration-700 group-hover:scale-110" /><div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-dark via-dark/50 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"><div className="flex items-center gap-2 text-xl font-semibold text-white">View project <ExternalLink className="h-5 w-5" /></div></div></div>
                 <div className="flex flex-col justify-between p-6 md:p-8"><div><p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{String(idx + 1).padStart(2, '0')} / {project.company || 'Independent build'}</p><h5 className="mb-3 text-xl font-semibold tracking-tight text-foreground md:text-2xl">{project.title}</h5><p className="line-clamp-3 text-muted-foreground">{project.description}</p></div><p className="mt-8 flex items-center gap-2 text-sm font-medium text-primary-light">Open case study <ExternalLink className="h-4 w-4" /></p></div>
               </div>

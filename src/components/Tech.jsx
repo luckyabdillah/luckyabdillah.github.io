@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPython, SiPhp, SiLaravel, SiMysql, SiPostgresql, SiMongodb, SiDocker, SiGit, SiTailwindcss, SiNextdotjs, SiVuedotjs, SiNuxtdotjs, SiExpress, SiKotlin, SiSwift, SiCss3, SiHtml5, SiBootstrap, SiGraphql, SiRedis, SiJenkins, SiAmazon, SiGooglecloud, SiCplusplus, SiJquery, SiFirebase, SiVercel, SiGithub, SiArduino, SiRaspberrypi, SiJouav, SiVite, SiLinux, SiNginx, SiEspressif, SiSqlite, SiPostman, SiJsonwebtokens, SiSass, SiSelenium, SiNextui, SiDaisyui, SiEjs, SiCodeigniter, SiFlutter, SiShadcnui, SiDjango, SiSpring, SiSpringboot } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiReact, SiNodedotjs, SiPython, SiPhp, SiLaravel, SiMysql, SiPostgresql, SiMongodb, SiDocker, SiGit, SiTailwindcss, SiNextdotjs, SiVuedotjs, SiNuxtdotjs, SiExpress, SiKotlin, SiSwift, SiCss3, SiHtml5, SiBootstrap, SiGraphql, SiRedis, SiJenkins, SiAmazon, SiGooglecloud, SiCplusplus, SiJquery, SiFirebase, SiVercel, SiGithub, SiArduino, SiRaspberrypi, SiJouav, SiVite, SiLinux, SiNginx, SiEspressif, SiSqlite, SiPostman, SiJsonwebtokens, SiSass, SiSelenium, SiNextui, SiDaisyui, SiEjs, SiCodeigniter, SiFlutter, SiShadcnui, SiDjango, SiSpring, SiSpringboot, SiFlask } from 'react-icons/si';
 import { BiLogoJava } from 'react-icons/bi';
 
 const Tech = () => {
@@ -28,8 +28,8 @@ const Tech = () => {
       { name: 'shadcn/ui', Icon: SiShadcnui, color: 'text-black-400' },
       { name: 'Next.js', Icon: SiNextdotjs, color: 'text-white' },
       { name: 'NextUI', Icon: SiNextui, color: 'text-gray-400' },
+      { name: 'Bootstrap', Icon: SiBootstrap, color: 'text-purple-600' },
       { name: 'EJS', Icon: SiEjs, color: 'text-yellow-600' },
-      // { name: 'Bootstrap', Icon: SiBootstrap, color: 'text-purple-600' },
       // { name: 'SASS', Icon: SiSass, color: 'text-pink-500' },
       // { name: 'jQuery', Icon: SiJquery, color: 'text-blue-400' },
       // { name: 'HTML5', Icon: SiHtml5, color: 'text-orange-600' },
@@ -38,12 +38,12 @@ const Tech = () => {
     'Backend': [
       { name: 'Node.js', Icon: SiNodedotjs, color: 'text-green-500' },
       { name: 'Django', Icon: SiDjango, color: 'text-black-600' },
-      { name: 'Spring Boot', Icon: SiSpringboot, color: 'text-green-700' },
-      { name: 'Express.js', Icon: SiExpress, color: 'text-gray-400' },
       { name: 'Firebase', Icon: SiFirebase, color: 'text-yellow-400' },
+      { name: 'Spring Boot', Icon: SiSpringboot, color: 'text-green-700' },
+      { name: 'Flask', Icon: SiFlask, color: 'text-black-400' },
       { name: 'Laravel', Icon: SiLaravel, color: 'text-red-500' },
+      { name: 'Express.js', Icon: SiExpress, color: 'text-gray-400' },
       // { name: 'GraphQL', Icon: SiGraphql, color: 'text-pink-500' },
-      { name: 'CodeIgniter', Icon: SiCodeigniter, color: 'text-red-600' },
       // { name: 'JWT Auth', Icon: SiJsonwebtokens, color: 'text-blue-500' },
     ],
     'Database': [

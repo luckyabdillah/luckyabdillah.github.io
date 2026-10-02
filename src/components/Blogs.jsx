@@ -7,7 +7,7 @@ const Blogs = () => {
       title: 'Building an ESP32 Multimedia Player Without Wi-Fi',
       description: 'How I designed an offline ESP32 player that keeps GIF animation and WAV playback responsive by splitting work across both cores, pairing assets through a generated SD-card manifest, and protecting shared storage with a mutex.',
       date: 'Embedded · 8 min read',
-      link: '/blogs/esp32-multimedia',
+      link: '#/blogs/esp32-multimedia',
     },
     {
       title: 'Building Scalable Web Applications',
