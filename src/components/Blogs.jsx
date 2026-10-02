@@ -4,6 +4,12 @@ import { FiExternalLink } from 'react-icons/fi';
 const Blogs = () => {
   const blogs = [
     {
+      title: 'Building an ESP32 Multimedia Player Without Wi-Fi',
+      description: 'How I designed an offline ESP32 player that keeps GIF animation and WAV playback responsive by splitting work across both cores, pairing assets through a generated SD-card manifest, and protecting shared storage with a mutex.',
+      date: 'Embedded · 8 min read',
+      link: '/blogs/esp32-multimedia',
+    },
+    {
       title: 'Building Scalable Web Applications',
       description: 'Best practices for building scalable and maintainable web applications using modern frameworks.',
       date: 'Coming Soon',
@@ -12,12 +18,6 @@ const Blogs = () => {
     {
       title: 'Microservices Architecture',
       description: 'A comprehensive guide to designing and implementing microservices architecture.',
-      date: 'Coming Soon',
-      link: 'javascript:void(0)',
-    },
-    {
-      title: 'Modern JavaScript Tips',
-      description: 'Essential JavaScript patterns and techniques every developer should know.',
       date: 'Coming Soon',
       link: 'javascript:void(0)',
     },

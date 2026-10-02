@@ -13,9 +13,10 @@ const Tech = () => {
       { name: 'TypeScript', Icon: SiTypescript, color: 'text-blue-500' },
       { name: 'Python', Icon: SiPython, color: 'text-blue-400' },
       { name: 'Java', Icon: BiLogoJava, color: 'text-red-600' },
-      { name: 'PHP', Icon: SiPhp, color: 'text-indigo-400' },
+      { name: 'C++', Icon: SiCplusplus, color: 'text-blue-700' },
       { name: 'Flutter', Icon: SiFlutter, color: 'text-cyan-400' },
-      { name: 'Kotlin', Icon: SiKotlin, color: 'text-purple-500' },
+      { name: 'PHP', Icon: SiPhp, color: 'text-indigo-400' },
+      // { name: 'Kotlin', Icon: SiKotlin, color: 'text-purple-500' },
     //   { name: 'Swift', Icon: SiSwift, color: 'text-orange-500' },
     ],
     'Frontend': [

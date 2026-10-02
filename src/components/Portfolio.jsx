@@ -6,14 +6,24 @@ import { Dialog, DialogContent, DialogDescription, DialogTitle } from './ui/dial
 
 const projects = [
   {
+    title: 'ESP32 Multimedia Player', company: 'Embedded / IoT', url: 'https://github.com/luckyabdillah/esp32-multimedia', img: 'https://opengraph.githubassets.com/1/luckyabdillah/esp32-multimedia',
+    description: 'A standalone ESP32-WROOM-32 multimedia player that synchronizes GIF animation on an ST7789 display with WAV playback through an I2S amplifier.',
+    details: ['Full-screen 240x240 GIF playback on ST7789 TFT', '16-bit mono/stereo WAV playback through I2S', 'Automatic GIF and WAV pairing from SD card filenames', 'Dual-core playback to keep animation smooth', 'Mutex-protected SD access and button-controlled randomization'],
+  },
+  {
     title: 'Structural Health Monitoring System', company: '', url: 'https://structural-health-monitoring-one.vercel.app', img: '/img/structural-health-monitoring.png',
-    description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization.',
+    description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization. Enables real-time monitoring, data analysis, and alerting for structural health assessment.',
     details: ['Real-time data acquisition from IoT sensors', 'Interactive data visualization dashboards', 'Automated alert system for structural anomalies', 'Real-time chart updates'],
   },
   {
     title: 'B2B Travel Platform', company: 'MARHABA WEFADA', url: 'https://marhabawefada.sa', img: '/img/marhabawefada-id.png',
-    description: 'Comprehensive platform enabling travel agents to create, customize, and book tailored land arrangement packages.',
+    description: 'Comprehensive platform enabling travel agents to create, customize, and book tailored land arrangement packages with integrated commission management and white-label distribution.',
     details: ["CMS Dashboard for Admin to manage service's price and suppliers", 'SMTP Relay Service integrated using Brevo for Customer Notification', 'Service-based commission for Travel Agency / Sales Agent', 'White-label distribution with customizable quotation and invoice', 'Passport reader and face recognition tools'],
+  },
+  {
+    title: 'AudioLDM API', company: 'Open source', url: 'https://github.com/luckyabdillah/audioldm-api', img: 'https://opengraph.githubassets.com/1/luckyabdillah/audioldm-api',
+    description: 'A Flask API for generating audio effects with AudioLDM v1, including prompt translation, background processing, language detection, enhancement, and WAV file delivery.',
+    details: ['Background processing for audio generation', 'AudioLDM v1 and NLLB model integration', 'Automatic language detection with configurable fallback', 'WAV output served through a public media URL', 'Health check, CORS, and Gunicorn deployment support'],
   },
   {
     title: 'Alju Shoes Clean', company: 'Alju Shoes', url: 'https://aljushoesclean.com', img: '/img/aljushoesclean.png',
@@ -29,11 +39,6 @@ const projects = [
     title: 'Restaurant ERP System', company: '', url: 'https://restaurant-erp.luckyabdillah.com', img: '/img/restaurant-erp.png',
     description: 'All-in-one web application for comprehensive restaurant management, from operations to accounting.',
     details: ['Web-based POS application', 'Market analysis chart', 'Logistic & Stock Opname', 'Finance & Accounting', 'Employee Affairs & Payroll'],
-  },
-  {
-    title: 'Tracc', company: '', url: 'https://tracc.luckyabdillah.com', img: '/img/tracc.png',
-    description: 'Tour & Travel Recording, Accounting, and Invoicing System for B2B transactions.',
-    details: ['Tour & Travel Recording System', 'Accounting System', 'Invoicing System', 'Expense Management', 'Financial Reporting'],
   },
   {
     title: 'Sistem Pelayanan BNN Provinsi Jatim', company: 'BNN Provinsi Jatim', url: 'https://simpelbnnpjatim.com', img: '/img/simpelbnnpjatim.png',

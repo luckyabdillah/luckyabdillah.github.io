@@ -6,6 +6,7 @@ import Tech from './components/Tech';
 import Blogs from './components/Blogs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ESP32MultiMedia from './pages/blogs/ESP32MultiMedia';
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('theme') === 'dark');
@@ -14,6 +15,16 @@ function App() {
     document.documentElement.classList.toggle('dark', darkMode);
     localStorage.setItem('theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
+
+  if (window.location.pathname === '/blogs/esp32-multimedia') {
+    return (
+      <div className={darkMode ? 'dark overflow-x-hidden' : 'overflow-x-hidden'}>
+        <Navbar darkMode={darkMode} onToggleTheme={() => setDarkMode((value) => !value)} />
+        <ESP32MultiMedia />
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className={darkMode ? 'dark overflow-x-hidden' : 'overflow-x-hidden'}>
