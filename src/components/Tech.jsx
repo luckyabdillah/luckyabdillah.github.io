@@ -101,7 +101,7 @@ const Tech = () => {
             {Object.keys(techGroups).map((tab) => (
               <TabsTrigger key={tab} value={tab} className="!h-auto !flex-none justify-between rounded-lg border border-border bg-dark-lighter px-3 py-3 text-left text-xs font-medium text-muted-foreground transition-all data-[state=active]:border-primary-light data-[state=active]:bg-primary-light data-[state=active]:text-dark sm:px-4 sm:text-sm lg:w-full">
                 <span>{tab}</span>
-                <span className="ml-6 text-xs opacity-60">{String(techGroups[tab].length).padStart(2, '0')}</span>
+                <span className="ml-6 text-xs opacity-60 hidden sm:block">{String(techGroups[tab].length).padStart(2, '0')}</span>
               </TabsTrigger>
             ))}
           </TabsList>
@@ -113,7 +113,7 @@ const Tech = () => {
                   <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Category</p>
                   <h4 className="mt-2 text-2xl font-semibold text-foreground">{tab}</h4>
                 </div>
-                <p className="text-sm text-muted-foreground">{technologies.length} technologies</p>
+                <p className="text-sm text-muted-foreground hidden sm:block">{technologies.length} technologies</p>
               </div>
               <div className="grid gap-x-8 md:grid-cols-2">
                 {technologies.map((tech, idx) => (
