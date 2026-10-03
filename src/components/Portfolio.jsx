@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
+import * as SimpleIcons from "react-icons/si";
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from './ui/dialog';
 
@@ -9,11 +10,20 @@ const projects = [
     title: 'ESP32 Multimedia Player', company: 'Embedded / IoT', url: 'https://github.com/luckyabdillah/esp32-multimedia', img: 'https://opengraph.githubassets.com/1/luckyabdillah/esp32-multimedia',
     description: 'A standalone ESP32-WROOM-32 multimedia player that synchronizes GIF animation on an ST7789 display with WAV playback through an I2S amplifier.',
     details: ['Full-screen 240x240 GIF playback on ST7789 TFT', '16-bit mono/stereo WAV playback through I2S', 'Automatic GIF and WAV pairing from SD card filenames', 'Dual-core playback to keep animation smooth', 'Mutex-protected SD access and button-controlled randomization'],
+    externalLinks: [
+      { name: 'Featured Video', url: 'https://www.instagram.com/p/DdtdyelKI-A/', source: 'Instagram' },
+      { name: 'Repository', url: 'https://github.com/luckyabdillah/esp32-multimedia', source: 'GitHub' },
+    ],
   },
   {
     title: 'Structural Health Monitoring System', company: '', url: 'https://structural-health-monitoring-one.vercel.app', img: '/img/structural-health-monitoring.png',
     description: 'Web-based application for monitoring and analyzing the structural integrity of buildings using IoT sensors and data visualization. Enables real-time monitoring, data analysis, and alerting for structural health assessment.',
     details: ['Real-time data acquisition from IoT sensors', 'Interactive data visualization dashboards', 'Automated alert system for structural anomalies', 'Real-time chart updates'],
+    externalLinks: [
+      { name: 'Repository', url: 'https://github.com/luckyabdillah/structural-health-monitoring', source: 'GitHub' },
+      { name: 'SHM Sensor Repository', url: 'https://github.com/luckyabdillah/shm-sensor-esp32', source: 'GitHub' },
+      { name: 'Live Demo', url: 'https://structural-health-monitoring-one.vercel.app', source: 'Vercel' },
+    ],
   },
   {
     title: 'B2B Travel Platform', company: 'MARHABA WEFADA', url: 'https://marhabawefada.sa', img: '/img/marhabawefada-id.png',
@@ -21,9 +31,13 @@ const projects = [
     details: ["CMS Dashboard for Admin to manage service's price and suppliers", 'SMTP Relay Service integrated using Brevo for Customer Notification', 'Service-based commission for Travel Agency / Sales Agent', 'White-label distribution with customizable quotation and invoice', 'Passport reader and face recognition tools'],
   },
   {
-    title: 'Indonesian Quotes API', company: 'Open source', url: 'https://indonesian-quotes-api.vercel.app', img: 'https://opengraph.githubassets.com/1/luckyabdillah/indonesian-quotes-api',
+    title: 'Indonesian Quotes API', company: 'Open source', url: 'https://github.com/luckyabdillah/indonesian-quotes-api', img: 'https://opengraph.githubassets.com/1/luckyabdillah/indonesian-quotes-api',
     description: 'Open-source API providing free access to a curated collection of inspirational Indonesian quotes. Supports retrieval by category, ID, and random selection, with options for users to submit their own quotes.',
     details: ['Get all quotes', 'Get all quotes by category', 'Get quotes by ID', 'Get random quotes', 'Get random quotes by category', 'Submit own quotes'],
+    externalLinks: [
+      { name: 'Repository', url: 'https://github.com/luckyabdillah/indonesian-quotes-api', source: 'GitHub' },
+      { name: 'Live Demo', url: 'https://indonesian-quotes-api.vercel.app', source: 'Vercel' },
+    ],
   },
   {
     title: 'Alju Shoes Clean', company: 'Alju Shoes', url: 'https://aljushoesclean.com', img: '/img/aljushoesclean.png',
@@ -50,6 +64,14 @@ const projects = [
 const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAll, setShowAll] = useState(false);
+
+  const getSourceIcon = (source) => {
+    if (!source) return ExternalLink;
+
+    const iconName = `Si${source.charAt(0).toUpperCase()}${source.slice(1).toLowerCase()}`;
+
+    return SimpleIcons[iconName] ?? ExternalLink;
+  };
 
   return (
     <section id="portfolio" className="section-padding bg-dark-light">
@@ -98,6 +120,25 @@ const Portfolio = () => {
                       {selectedProject.details.map((detail) => <li key={detail} className="flex items-start gap-2 text-sm leading-relaxed text-foreground"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light" />{detail}</li>)}
                     </ul>
                   </div>
+                  {selectedProject.externalLinks && (
+                    <div className="border-b border-border py-5">
+                      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">External links</p>
+                      <ul className="grid gap-3 sm:grid-cols-2">
+                        {selectedProject.externalLinks.map((link) => {
+                          const SourceIcon = getSourceIcon(link.source);
+                          return (
+                            <li key={link.url} className="flex items-center gap-2 text-sm leading-relaxed text-foreground">
+                              <SourceIcon className="h-4 w-4 shrink-0 text-primary-light" />
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">{link.name}</a>
+                              <span className="text-xs text-muted-foreground">
+                                ({link.source})
+                              </span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
               <div className="flex flex-wrap gap-3 p-6 pt-3 sm:p-8 sm:pt-3">
